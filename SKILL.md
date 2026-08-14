@@ -28,8 +28,9 @@ Do not claim hidden internal structure is real unless the user provides teardown
 8. Classify each feature as either a separable part, an integral molded/thrown/formed feature, surface decoration, or optional accessory. Read `references/structure-consistency-cases.md` before generating exploded views, section views, three-view boards, or any image that implies product construction. Do not explode integral features as independent parts.
 9. Use the section/construction model as the source of truth for exploded views. If the section shows a continuous formed or permanently joined body, the exploded view must keep that body together and separate only serviceable inserts, accessories, trays, fasteners, or modules.
 10. Run a structure-consistency check before finalizing: the exploded view, section view, three-view drawings, labels, and written explanation must describe the same construction logic.
-11. Produce the requested deliverable: design observation, visual-identity preservation notes, working-principle summary, structure hypothesis, exploded diagram description, sketch-generation prompt, three-view prompt, CMF board, Chinese annotation overlay, improvement proposal, or Xiaohongshu-safe post.
-12. For images intended for publication, add an AI/assumption disclaimer and avoid brand infringement. Recommend removing or masking visible trademarks if the product is branded and the output is commercial or public.
+11. Create a Chinese part-name list before generating the final annotated diagram. For any requested deconstruction, exploded-view, section-view, or structure board, the final deliverable must include component names unless the user explicitly asks for a no-label base image.
+12. Produce the requested deliverable: design observation, visual-identity preservation notes, working-principle summary, structure hypothesis, exploded diagram description, sketch-generation prompt, three-view prompt, CMF board, Chinese annotation overlay, improvement proposal, or Xiaohongshu-safe post.
+13. For images intended for publication, add an AI/assumption disclaimer and avoid brand infringement. Recommend removing or masking visible trademarks if the product is branded and the output is commercial or public.
 
 ## Output Menu
 
@@ -136,12 +137,25 @@ Then verify:
 Use this workflow whenever the user wants Chinese handwritten-style labels, publishable diagrams, or Xiaohongshu-ready images:
 
 1. Generate the base diagram with no readable text in any language, no fake labels, and enough blank side/bottom space for annotations. Explicitly ask for no English words such as "front", "side", "cap", "notes", or material labels.
-2. Write a short Chinese label list. Keep each label under 8 Chinese characters when possible, such as `外盖`, `密封圈`, `内胆`, `主板`, `电池`, `口沿`, `罐身`, `底足`, `材质`, `开合区`.
-3. Add the labels locally with `scripts/add_handwritten_labels.py` instead of relying on AI-generated Chinese text.
-4. Use a real local Chinese handwritten or handwritten-adjacent font when available. Prefer `Alimama DongFangDaKai` or a Chinese kaiti/handwriting font. If unavailable, fall back to an installed Chinese font such as `Hiragino Sans GB`, `STHeiti`, or `Arial Unicode`, and report that it is a font fallback.
-5. Use all-Chinese labels by default. English is allowed only for real industry abbreviations or material codes, such as `PCB`, `CMF`, `LED`, `USB-C`, `PP`, `ABS`, `PET`, or `IPX7`.
-6. Place labels outside the drawing content, preferably in left/right side columns or bottom white space. Use thin leader lines to point at the relevant part. Do not let label boxes cover product silhouettes, exploded parts, section views, three-view drawings, material swatches, or important linework.
-7. Visually inspect the final image for wrong characters, English leakage, overlapping labels, broken leader lines, and labels covering the main product.
+2. Write a short Chinese part-name list before rendering labels. This is mandatory for final deconstruction images, not optional. Include the visible exterior parts, likely serviceable internal parts, key integral features, and any uncertainty labels such as `结构待校`, `概念推测`, or `待验证`.
+3. Keep each label under 8 Chinese characters when possible, such as `外盖`, `密封圈`, `内胆`, `主板`, `电池`, `口沿`, `罐身`, `底足`, `材质`, `开合区`.
+4. Add the labels locally with `scripts/add_handwritten_labels.py` instead of relying on AI-generated Chinese text.
+5. Use a real local Chinese handwritten or handwritten-adjacent font when available. Prefer `Alimama DongFangDaKai` or a Chinese kaiti/handwriting font. If unavailable, fall back to an installed Chinese font such as `Hiragino Sans GB`, `STHeiti`, or `Arial Unicode`, and report that it is a font fallback.
+6. Use all-Chinese labels by default. English is allowed only for real industry abbreviations or material codes, such as `PCB`, `CMF`, `LED`, `USB-C`, `PP`, `ABS`, `PET`, or `IPX7`.
+7. Place labels outside the drawing content, preferably in left/right side columns or bottom white space. Use thin leader lines to point at the relevant part. Do not let label boxes cover product silhouettes, exploded parts, section views, three-view drawings, material swatches, or important linework.
+8. Visually inspect the final image for wrong characters, English leakage, overlapping labels, broken leader lines, labels covering the main product, and labels squeezed into bottom thumbnails. If labels cannot fit cleanly, reduce label count, split into two cards, or enlarge blank margins.
+
+## Final Deliverable Gate
+
+Before responding with a finished image set, verify:
+
+- A no-text base image exists when image generation was used.
+- A final Chinese annotated image exists for every requested deconstruction/structure board, unless the user explicitly requested no labels.
+- The annotated image names real parts or features, not only view names such as `三视图` or generic notes.
+- Uncertain or incorrect generated structures are marked as `待校`, `概念推测`, or rejected/regenerated.
+- Labels are all Chinese except allowed industry abbreviations.
+- Labels do not cover the product, exploded parts, section details, or bottom thumbnails.
+- File names distinguish base and annotated outputs, for example `商品名_无文字底图_v1.0.png` and `商品名_中文标注版_v1.0.png`.
 
 Label JSON format for the script:
 
