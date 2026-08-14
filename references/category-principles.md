@@ -89,6 +89,36 @@ Common exploded layers:
 7. Base shell and weight
 8. Cable or battery module
 
+## Heating and Cooking Vessels
+
+Examples: old Beijing copper hot pot, charcoal hot pot, alcohol-lamp warmer, chafing dish, electric hot pot, tea warmer, fondue pot.
+
+Start by identifying the heat-source system. The same exterior "pot" silhouette can imply very different structures:
+
+- Charcoal fire: charcoal chamber/fire pot, grate, air inlets, ash path, chimney or smoke/draft path, heat transfer into the soup basin, heat-resistant handles, removable ash tray or grate when present.
+- Alcohol lamp: lamp cup or fuel reservoir, wick/burner, flame clearance, wind shield, pot support, insulation tray or water tray when present, refill/extinguish access.
+- Electric heating: heating plate or element, thermostat/sensor, wiring, insulation layer, controls, power inlet, strain relief, safety cutoff.
+- Gas heating: burner head, air/fuel mixing path, pot stand, gas inlet, ignition/safety parts.
+
+Old Beijing copper hot pot principles:
+
+- Core function: central heat source warms an annular soup basin for table cooking.
+- Heat and flow: fire/flame produces heat; air enters from lower vents or openings; hot gas/smoke rises through the chimney in charcoal versions; the surrounding soup basin receives heat through metal walls and bottom contact.
+- Structure: annular pot body, central chimney, raised base or fire chamber, vent openings, possible grate, possible ash tray, ring handles, rolled rim, lid only if visible or provided.
+- Material logic: copper or brass-colored metal body is usually sheet-formed, spun, hammered, rolled, soldered, brazed, riveted, or mechanically fastened. Rolled rims, vent holes, chimney walls, and many seams are manufacturing features, not user-removable parts.
+- Safety: heat isolation may come from an air gap, raised stand, handles, feet, insulation tray, or water-filled tray depending on the product. Do not assume a water tray unless visible, provided by the user, or common for the identified heat-source system.
+
+Common exploded layers for hot pots and warmers:
+
+1. Lid or chimney cap only when visible or category-justified
+2. Annular pot body and central chimney as the main vessel assembly unless visible seams imply separability
+3. Handles, handle mounts, and rivets when visible
+4. Burner/fire module: charcoal chamber and grate, or alcohol lamp cup/wick, or electric heating plate
+5. Ash tray, fuel tray, water tray, insulation tray, or drip tray only when visible or justified by the selected heat-source system
+6. Base/stand, feet, anti-scald support, or wind shield when visible or category-justified
+
+Do not mix heat-source systems in one structure diagram. If uncertain, present variants such as `炭火版` and `酒精灯版`.
+
 ## Packaging and Gift Objects
 
 Examples: tea gift box, perfume box, premium stationery package, cosmetic set.
@@ -153,6 +183,13 @@ Use this template when the user asks for a full case:
 - 材料/工艺：
 - 安全/清洁/维护：
 
+## 工作原理调研
+- 热源/能量：
+- 运行路径：
+- 用户动作：
+- 安全/维护：
+- 需要验证的分歧：
+
 ## 合理结构推测
 - 外层：
 - 中层：
@@ -197,6 +234,7 @@ Chinese handwritten overlay labels:
 - Packaging tubes: `翻盖`, `防拆环`, `干燥塞`, `管身`, `标签`, `片剂`, `底座`, `密封面`
 - Handheld electronics: `玻璃面板`, `屏幕层`, `中框`, `主板`, `电池`, `按键`, `后壳`, `接口`
 - Lighting: `灯罩`, `扩散片`, `灯板`, `散热件`, `转轴`, `电路`, `底座`, `线缆`
+- Hot pots/warmers: `锅身`, `环形汤槽`, `中心烟囱`, `通风孔`, `炭火仓`, `火箅`, `灰盘`, `托盘`, `隔热层`, `提环`, `锅沿`
 
 Keep labels short. Put longer uncertainty notes outside the image or in the post body, not inside the diagram.
 

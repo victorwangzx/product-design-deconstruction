@@ -70,6 +70,19 @@ If the answer points to forming or surface finishing, label it as an integral fe
 - Common mistake: treating vent holes or rib patterns as separate parts.
 - Correct handling: separate optical, thermal, electrical, joint, and base assemblies; keep molded details attached to the shell.
 
+## Charcoal Hot Pot / Old Beijing Copper Hot Pot
+
+- First decide the heat-source system: charcoal fire, alcohol lamp, electric heating, or gas. The exploded structure must follow that system.
+- Charcoal version usually separable/serviceable: fire grate (`火箅`), ash tray (`灰盘`) if visible or typical for the model, chimney cap/lid if present, removable charcoal basket if visible, detachable handles only when fasteners or separate mounts are visible.
+- Charcoal version usually integral or permanently joined: annular soup basin (`环形汤槽`), central chimney (`中心烟囱`), rolled rim (`锅沿`), vent holes (`通风孔`), raised base/fire chamber shell, soldered/brazed/riveted seams unless the image shows a removable joint.
+- Alcohol-lamp version usually separable/serviceable: alcohol lamp cup, wick/burner, extinguishing cap, pot support, wind shield, fuel tray, insulation tray or water tray when visible or category-justified.
+- Alcohol-lamp version usually integral/permanent: pot body, support frame welds, punched vents, rolled rim, fixed handle mounts.
+- Surface layer: copper patina, soot marks, polishing, lacquer, tin lining, decorative hammering, stamped pattern. Mark tin lining or water tray as assumptions unless visible or provided.
+- Common mistake: drawing a charcoal chimney and an alcohol-lamp tray in the same exploded view; detaching the chimney or rolled rim as a loose part without a seam; omitting the air/smoke path in a charcoal hot pot.
+- Common mistake: making the section view structurally plausible while the exploded view invents a different base, tray, or stacked-shell system.
+- Correct handling: show heat source, air/oxygen path, exhaust/smoke path or flame clearance, heat transfer to the soup basin, and table-surface heat isolation. If the heat source is uncertain, present two small alternatives instead of one contradictory mechanism.
+- View consistency: if the section view shows a charcoal fire chamber inside a raised base with vent holes, the exploded view should keep the pot/chimney/base shell as one main vessel assembly, then separate only the fire grate, ash tray, charcoal basket, lid/cap, or insulation tray when justified. Do not add an alcohol-lamp-style water tray to a charcoal version unless the user provides that detail or the object visibly has one.
+
 ## When To Add A Separate Base Or Foot
 
 Add a separate base/foot only when at least one condition is true:
