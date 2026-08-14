@@ -1,0 +1,4 @@
+interface:
+  display_name: "Product Design Deconstruction"
+  short_description: "Product photo to design sketch logic"
+  default_prompt: "Use $product-design-deconstruction to analyze this product photo, separate visible facts from inferred structure, and draft deconstruction sketch prompts."
