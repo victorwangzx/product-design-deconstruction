@@ -216,19 +216,19 @@ Use this template when the user asks for a full case:
 
 Industrial sketch:
 
-`vertical 9:16 industrial design sketch sheet of a [product category], 1080x1920 composition, preserving the visible exterior proportions from the reference photo, main product sketch in the upper area, multiple small perspective studies below, clean pencil and marker linework, large blank side margins for later Chinese annotation, no readable text in any language, no English words, white background`
+`vertical 9:16 industrial design sketch sheet of a [product category], 1080x1920 composition, preserving the visible exterior proportions from the reference photo, main product sketch in the upper area, multiple small perspective studies below, clean pencil and marker linework, large blank side margins for later Chinese annotation, no readable text in any language, no English words, no callout boxes, no leader lines, no arrows, no numbered markers, white background`
 
 Exploded view:
 
-`vertical 9:16 conceptual exploded view of a [product category], 1080x1920 composition, separate only actual or likely separable parts, keep integral formed features attached to their parent body, inferred internal mechanism shown as generic category-based structure, visible parts preserved, hidden parts simplified, blank side margins and blank callout lines with no readable text in any language, no English words, precise industrial design drawing, thin black linework, subtle gray shading, no brand logos`
+`vertical 9:16 conceptual exploded view of a [product category], 1080x1920 composition, separate only actual or likely separable parts, keep integral formed features attached to their parent body, inferred internal mechanism shown as generic category-based structure, visible parts preserved, hidden parts simplified, large blank side margins with no labels, no callout boxes, no leader lines, no arrows, no numbered markers, no readable text in any language, no English words, precise industrial design drawing, thin black linework, subtle gray shading, no brand logos`
 
 Three-view:
 
-`vertical 9:16 orthographic three-view industrial design board of a [product category], 1080x1920 composition, front side top views arranged in the lower third, accurate silhouette based on reference photo, clean technical sketch style, no dimensions, no readable text in any language, no English words, white background`
+`vertical 9:16 orthographic three-view industrial design board of a [product category], 1080x1920 composition, front side top views arranged in the lower third, accurate silhouette based on reference photo, clean technical sketch style, no dimensions, no callout boxes, no leader lines, no arrows, no numbered markers, no readable text in any language, no English words, white background`
 
 CMF study:
 
-`vertical 9:16 CMF design board for a [product category], 1080x1920 composition, material swatches for [materials], close-up surface texture studies, product silhouette thumbnail, restrained industrial design presentation, blank label areas, no readable text in any language, no English words`
+`vertical 9:16 CMF design board for a [product category], 1080x1920 composition, material swatches for [materials], close-up surface texture studies, product silhouette thumbnail, restrained industrial design presentation, blank label areas only, no callout boxes, no leader lines, no arrows, no numbered markers, no readable text in any language, no English words`
 
 Chinese handwritten overlay labels:
 
