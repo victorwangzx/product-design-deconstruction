@@ -19,6 +19,8 @@ Do not claim hidden internal structure is real unless the user provides teardown
 
 User-provided facts outrank category assumptions. If the user says the photo includes an independent tray, water-filled safety tray, special heat shield, detachable insert, or shop-specific visual style, treat that as a required constraint unless it conflicts with the image or safety reality. Do not overwrite it with generic product knowledge.
 
+Use user-submitted images as evidence and visual reference by default, not as composited content. Do not embed, paste, collage, frame, overlay, or add the user's original photo into the final deliverable image unless the user explicitly asks for a before/after comparison, reference inset, or source-photo panel.
+
 ## Workflow
 
 1. Identify the main object in the image or link. Distinguish the product from props, hands, background, packaging, and scene decoration.
@@ -78,7 +80,7 @@ Before generating diagrams, write a short preservation brief from the user's ima
 - Context cues: restaurant object, home appliance, school object, gift packaging, child's toy, repair-worn item, premium display item.
 - What must survive in every view: the 3-5 visual features that make this specific object recognizable.
 
-Use the preservation brief in prompts. The generated product should look like a deconstructed version of the user's photographed object, not a generic category sample. Treat this as same-object evidence: the user should be able to compare the generated diagram with the source photo and recognize the same object family, shop-specific style, surface treatment, and key exterior proportions. For public diagrams, remove or soften brand marks if needed, but preserve non-branded visual character.
+Use the preservation brief in prompts. The generated product should look like a deconstructed version of the user's photographed object, not a generic category sample. Treat this as same-object evidence: the user should be able to compare the generated diagram with the source photo and recognize the same object family, shop-specific style, surface treatment, and key exterior proportions. Preserve identity by redrawing or translating visual cues, not by inserting the original photo into the board. For public diagrams, remove or soften brand marks if needed, but preserve non-branded visual character.
 
 ## Working-Principle Research
 
@@ -106,6 +108,7 @@ When generating prompts for image tools, include:
 - Evidence discipline: visible exterior preserved, inferred interior shown as conceptual, hidden parts labeled as assumptions.
 - User-fact discipline: explicitly include user-specified parts and functions, such as a visible independent tray with water used for safety isolation. Do not omit these details because generic category research points elsewhere.
 - Visual identity discipline: preserve the photographed object's silhouette, proportions, surface finish, patina/wear, color, hardware style, and distinctive non-branded visual cues across the intact view, exploded view, section view, and three-view thumbnails.
+- Source-image discipline: use the submitted image only as reference unless the user explicitly requests a comparison panel. Final diagrams must not include the original photo as an inset, background, overlay, collage tile, corner thumbnail, or framed evidence panel.
 - Working-principle discipline: show only structures that fit the selected mechanism. Do not mix charcoal, alcohol-lamp, gas, and electric heating structures unless presenting alternative concepts.
 - Structural discipline: only separate actual or likely separable parts. Do not visually explode one-piece ceramic/plastic/metal features such as molded feet, thrown foot rings, ribs, lips, or shoulders unless the category normally uses an added insert or the photo shows a seam.
 - View-consistency discipline: make the exploded view obey the section view. If the section shows the pot body, chimney, base wall, or shell as one continuous or permanently joined assembly, do not split those forms into floating trays or duplicate bodies in the exploded view.
@@ -126,6 +129,8 @@ When the user provides a product photo and asks for generated images without spe
 
 The intact top view must preserve the user's photographed exterior most strongly. The exploded and section views may simplify hidden internals, but they should carry the same exterior silhouette, material finish, hardware style, and visible wear/pattern cues.
 
+Do not include a copy of the source photo in the board. If provenance or comparison is needed, provide the source photo as a separate file/link or a separate comparison artifact only after the user asks.
+
 Keep all final saved images in the same dimensions within one task. Use semantic version filenames, such as `商品名_设计拆解图组_v1.0.png`, `商品名_无文字底图_v1.0.png`, and `商品名_中文标注版_v1.0.png`.
 
 If a tool returns a different aspect ratio, crop or pad non-destructively to 9:16 before final delivery. Prefer padding with a clean white or paper-like background over cropping product details.
@@ -141,6 +146,7 @@ Before generating or delivering an image, write a compact construction model:
 - User-provided fact model: any stated part, usage detail, safety function, or correction that must appear in the final analysis/image.
 - Working-principle model: energy/source, path, heat/fluid/air/motion route, and user-serviceable parts.
 - Visual identity model: distinctive exterior cues from the source photo that must remain visible after deconstruction.
+- Source-image usage model: confirm whether the source photo is reference-only or explicitly requested as an inset/comparison image.
 
 Then verify:
 
@@ -151,7 +157,8 @@ Then verify:
 5. The exploded view does not duplicate a shell/body that already exists in the intact view unless the product truly has nested removable shells.
 6. User-provided factual parts and functions are included, labeled, and not contradicted by the drawing.
 7. The final image still resembles the user's photographed object in silhouette, material character, and distinctive visual cues.
-8. If an AI-generated image creates a contradiction, omits a user-provided fact, or becomes a generic category object, either regenerate or explicitly reject that part of the image as inaccurate.
+8. The final image does not embed or collage the user's original photo unless explicitly requested.
+9. If an AI-generated image creates a contradiction, omits a user-provided fact, embeds the original photo without request, or becomes a generic category object, either regenerate or explicitly reject that part of the image as inaccurate.
 
 ## Chinese Handwritten Annotation Workflow
 
@@ -176,6 +183,7 @@ Before responding with a finished image set, verify:
 - Uncertain or incorrect generated structures are marked as `待校`, `概念推测`, or rejected/regenerated.
 - Labels are all Chinese except allowed industry abbreviations.
 - Labels do not cover the product, exploded parts, section details, or bottom thumbnails.
+- The final board does not contain the user's original photo as an inset, background, collage element, or reference panel unless the user explicitly requested it.
 - File names distinguish base and annotated outputs, for example `商品名_无文字底图_v1.0.png` and `商品名_中文标注版_v1.0.png`.
 
 Label JSON format for the script:
