@@ -6,6 +6,7 @@ Use these cases before writing exploded-view prompts or judging AI-generated dec
 
 Ask these questions for every visible feature:
 
+0. Did the user explicitly identify this as a separate part, safety feature, water tray, heat shield, or shop-specific visual element?
 1. Is there a visible seam, fastener, material change, gasket, or assembly boundary?
 2. Would a user, repairer, or manufacturer plausibly remove or assemble this as a separate part?
 3. Is this feature usually formed by molding, trimming, folding, bending, machining, glazing, printing, embossing, or surface finishing?
@@ -78,10 +79,11 @@ If the answer points to forming or surface finishing, label it as an integral fe
 - Alcohol-lamp version usually separable/serviceable: alcohol lamp cup, wick/burner, extinguishing cap, pot support, wind shield, fuel tray, insulation tray or water tray when visible or category-justified.
 - Alcohol-lamp version usually integral/permanent: pot body, support frame welds, punched vents, rolled rim, fixed handle mounts.
 - Surface layer: copper patina, soot marks, polishing, lacquer, tin lining, decorative hammering, stamped pattern. Mark tin lining or water tray as assumptions unless visible or provided.
+- User-provided tray: when the user says the photographed hot pot has an independent tray with a little water for safety protection or heat isolation, treat it as a required separable component. Label it as `盛水托盘` or `隔热水盘`, and do not collapse it into `灰盘` or generic `底座`.
 - Common mistake: drawing a charcoal chimney and an alcohol-lamp tray in the same exploded view; detaching the chimney or rolled rim as a loose part without a seam; omitting the air/smoke path in a charcoal hot pot.
 - Common mistake: making the section view structurally plausible while the exploded view invents a different base, tray, or stacked-shell system.
 - Correct handling: show heat source, air/oxygen path, exhaust/smoke path or flame clearance, heat transfer to the soup basin, and table-surface heat isolation. If the heat source is uncertain, present two small alternatives instead of one contradictory mechanism.
-- View consistency: if the section view shows a charcoal fire chamber inside a raised base with vent holes, the exploded view should keep the pot/chimney/base shell as one main vessel assembly, then separate only the fire grate, ash tray, charcoal basket, lid/cap, or insulation tray when justified. Do not add an alcohol-lamp-style water tray to a charcoal version unless the user provides that detail or the object visibly has one.
+- View consistency: if the section view shows a charcoal fire chamber inside a raised base with vent holes, the exploded view should keep the pot/chimney/base shell as one main vessel assembly, then separate only the fire grate, ash tray, charcoal basket, lid/cap, water-filled safety tray, or insulation tray when justified. Do not add an alcohol-lamp-style water tray to a charcoal version unless the user provides that detail or the object visibly has one.
 
 ## When To Add A Separate Base Or Foot
 

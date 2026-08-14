@@ -10,27 +10,31 @@ description: "Turn product photos, screenshots, or product links into industrial
 Treat the output as design analysis and concept reconstruction, not verified teardown evidence. Always separate:
 
 - Visible facts: what can be seen directly in the photo.
+- User-provided facts: corrections or details supplied by the user about how the object is used, assembled, heated, powered, filled, opened, cleaned, or protected.
 - Visual identity layer: the product's distinctive exterior character, proportions, surface traces, color, finish, pattern, wear, context cues, and recognizable styling.
 - Category-based inference: likely structures or mechanisms based on common products in the same category.
 - Creative reconstruction: optional design improvements or stylized sketch directions.
 
 Do not claim hidden internal structure is real unless the user provides teardown photos, CAD, drawings, manuals, patents, or measurements.
 
+User-provided facts outrank category assumptions. If the user says the photo includes an independent tray, water-filled safety tray, special heat shield, detachable insert, or shop-specific visual style, treat that as a required constraint unless it conflicts with the image or safety reality. Do not overwrite it with generic product knowledge.
+
 ## Workflow
 
 1. Identify the main object in the image or link. Distinguish the product from props, hands, background, packaging, and scene decoration.
 2. Classify the object by product attributes, not just name. Use multiple labels when helpful, such as `handheld electronic product`, `ceramic container`, `food-storage packaging`, `skin-contact appliance`, `desktop lighting`, `children's product`, or `gift object`.
 3. Extract visible design facts: silhouette, proportions, parting lines, seams, buttons, openings, surface texture, materials, colors, finish, logo/branding, user-contact areas, safety clues, and manufacturing hints.
-4. Preserve the visual identity layer from the user's photo. Capture proportions, silhouette quirks, surface finish, patina, wear marks, decorative pattern, hardware style, color temperature, and context-specific character before any generic reconstruction. Treat this as a required layer in the final board unless the user asks for a neutral technical drawing.
-5. Research the product's working principle before inferring structure. Determine the energy source, operating cycle, material/fluid/air/heat path, user actions, safety boundaries, maintenance points, and likely serviceable parts. When the mechanism is specific, unfamiliar, safety-related, modern, regulated, or ambiguous, look up credible sources such as manuals, museum/encyclopedic references, technical articles, repair guides, patents, or official product pages before drawing.
-6. Match the category to design principles. Read `references/category-principles.md` when a concrete product category is involved or when making mechanism/structure inferences.
-7. Infer likely structure conservatively from visible facts plus the researched working principle. Use wording such as "likely", "possibly", "common in this category", and "conceptual assumption".
-8. Classify each feature as either a separable part, an integral molded/thrown/formed feature, surface decoration, or optional accessory. Read `references/structure-consistency-cases.md` before generating exploded views, section views, three-view boards, or any image that implies product construction. Do not explode integral features as independent parts.
-9. Use the section/construction model as the source of truth for exploded views. If the section shows a continuous formed or permanently joined body, the exploded view must keep that body together and separate only serviceable inserts, accessories, trays, fasteners, or modules.
-10. Run a structure-consistency check before finalizing: the exploded view, section view, three-view drawings, labels, and written explanation must describe the same construction logic.
-11. Create a Chinese part-name list before generating the final annotated diagram. For any requested deconstruction, exploded-view, section-view, or structure board, the final deliverable must include component names unless the user explicitly asks for a no-label base image.
-12. Produce the requested deliverable: design observation, visual-identity preservation notes, working-principle summary, structure hypothesis, exploded diagram description, sketch-generation prompt, three-view prompt, CMF board, Chinese annotation overlay, improvement proposal, or Xiaohongshu-safe post.
-13. For images intended for publication, add an AI/assumption disclaimer and avoid brand infringement. Recommend removing or masking visible trademarks if the product is branded and the output is commercial or public.
+4. Capture user-provided facts and corrections as constraints. Include any detail the user states about independent parts, water trays, safety functions, real usage, local shop features, or known product identity.
+5. Preserve the visual identity layer from the user's photo. Capture proportions, silhouette quirks, surface finish, patina, wear marks, decorative pattern, hardware style, color temperature, and context-specific character before any generic reconstruction. Treat this as a required same-object evidence layer in the final board unless the user asks for a neutral technical drawing.
+6. Research the product's working principle before inferring structure. Determine the energy source, operating cycle, material/fluid/air/heat path, user actions, safety boundaries, maintenance points, and likely serviceable parts. When the mechanism is specific, unfamiliar, safety-related, modern, regulated, or ambiguous, look up credible sources such as manuals, museum/encyclopedic references, technical articles, repair guides, patents, or official product pages before drawing.
+7. Match the category to design principles. Read `references/category-principles.md` when a concrete product category is involved or when making mechanism/structure inferences.
+8. Infer likely structure conservatively from visible facts, user-provided facts, and the researched working principle. Use wording such as "likely", "possibly", "common in this category", and "conceptual assumption".
+9. Classify each feature as either a separable part, an integral molded/thrown/formed feature, surface decoration, or optional accessory. Read `references/structure-consistency-cases.md` before generating exploded views, section views, three-view boards, or any image that implies product construction. Do not explode integral features as independent parts.
+10. Use the section/construction model as the source of truth for exploded views. If the section shows a continuous formed or permanently joined body, the exploded view must keep that body together and separate only serviceable inserts, accessories, trays, fasteners, or modules.
+11. Run a structure-consistency check before finalizing: the exploded view, section view, three-view drawings, labels, and written explanation must describe the same construction logic.
+12. Create a Chinese part-name list before generating the final annotated diagram. For any requested deconstruction, exploded-view, section-view, or structure board, the final deliverable must include component names unless the user explicitly asks for a no-label base image.
+13. Produce the requested deliverable: design observation, visual-identity preservation notes, working-principle summary, structure hypothesis, exploded diagram description, sketch-generation prompt, three-view prompt, CMF board, Chinese annotation overlay, improvement proposal, or Xiaohongshu-safe post.
+14. For images intended for publication, add an AI/assumption disclaimer and avoid brand infringement. Recommend removing or masking visible trademarks if the product is branded and the output is commercial or public.
 
 ## Output Menu
 
@@ -38,17 +42,31 @@ Choose only the sections that fit the user's request. For a full analysis, use t
 
 1. Subject and category
 2. Visible facts
-3. Visual identity layer
-4. Working-principle research
-5. Product attributes and design principles
-6. Inferred structure
-7. Part/integral-feature classification
-8. Exploded-view layer plan
-9. Structure-consistency check
-10. Sketch prompt
-11. CMF notes
-12. Design improvement directions
-13. Disclaimer and publishing safety notes
+3. User-provided facts
+4. Visual identity layer
+5. Working-principle research
+6. Product attributes and design principles
+7. Inferred structure
+8. Part/integral-feature classification
+9. Exploded-view layer plan
+10. Structure-consistency check
+11. Sketch prompt
+12. CMF notes
+13. Design improvement directions
+14. Disclaimer and publishing safety notes
+
+## Evidence Priority
+
+Use this priority order when facts conflict:
+
+1. User-provided facts and corrections about this specific object.
+2. Visible facts in the supplied image.
+3. Documents, manuals, teardown photos, measurements, or reliable sources supplied by the user.
+4. Credible external research about the same product type.
+5. Category principles and common construction logic.
+6. Creative reconstruction.
+
+If a user states a visible or usage-specific fact such as `照片里有独立托盘` or `托盘里会加水用于安全隔热`, the generated structure must include and label it. If unsure how it connects to the heat source, state the uncertainty or show a focused detail rather than omitting it.
 
 ## Visual Identity Preservation
 
@@ -60,7 +78,7 @@ Before generating diagrams, write a short preservation brief from the user's ima
 - Context cues: restaurant object, home appliance, school object, gift packaging, child's toy, repair-worn item, premium display item.
 - What must survive in every view: the 3-5 visual features that make this specific object recognizable.
 
-Use the preservation brief in prompts. The generated product should look like a deconstructed version of the user's photographed object, not a generic category sample. For public diagrams, remove or soften brand marks if needed, but preserve non-branded visual character.
+Use the preservation brief in prompts. The generated product should look like a deconstructed version of the user's photographed object, not a generic category sample. Treat this as same-object evidence: the user should be able to compare the generated diagram with the source photo and recognize the same object family, shop-specific style, surface treatment, and key exterior proportions. For public diagrams, remove or soften brand marks if needed, but preserve non-branded visual character.
 
 ## Working-Principle Research
 
@@ -74,7 +92,7 @@ Before writing prompts or generating images, build a compact mechanism model:
 - Safety and maintenance: heat isolation, ventilation, drainage, sealing, insulation, cleaning, replacement, child safety, food contact, or electrical protection.
 - Uncertainty: alternative mechanisms that would change the structure.
 
-If multiple working principles are plausible, branch the structure model instead of forcing one answer. For example, a hot pot heated by charcoal requires a combustion chamber, air inlets, grate, ash path, chimney/draft path, and heat-transfer contact to the annular soup basin. A small alcohol-lamp hot pot instead requires a lamp cup/burner, wick or fuel reservoir, flame clearance, wind shield, pot support, and often a water-filled or air-gap insulation tray. These two systems should not share the same exploded structure.
+If multiple working principles are plausible, branch the structure model instead of forcing one answer. For example, a hot pot heated by charcoal requires a combustion chamber, air inlets, grate, ash path, chimney/draft path, and heat-transfer contact to the annular soup basin. A small alcohol-lamp hot pot instead requires a lamp cup/burner, wick or fuel reservoir, flame clearance, wind shield, pot support, and often a water-filled or air-gap insulation tray. If the user says a water-filled safety tray is present, include it as a separable safety/insulation part even in a charcoal-style hot pot, while keeping the heat-source path internally consistent.
 
 When research is used, cite the source names or URLs in the written analysis. When no external research is needed, say the working principle is based on visible facts and common category principles.
 
@@ -86,6 +104,7 @@ When generating prompts for image tools, include:
 - Product category and viewpoint.
 - Drawing type: industrial design sketch, exploded view, three-view sheet, function zoning diagram, CMF study, detail callout, or concept redesign.
 - Evidence discipline: visible exterior preserved, inferred interior shown as conceptual, hidden parts labeled as assumptions.
+- User-fact discipline: explicitly include user-specified parts and functions, such as a visible independent tray with water used for safety isolation. Do not omit these details because generic category research points elsewhere.
 - Visual identity discipline: preserve the photographed object's silhouette, proportions, surface finish, patina/wear, color, hardware style, and distinctive non-branded visual cues across the intact view, exploded view, section view, and three-view thumbnails.
 - Working-principle discipline: show only structures that fit the selected mechanism. Do not mix charcoal, alcohol-lamp, gas, and electric heating structures unless presenting alternative concepts.
 - Structural discipline: only separate actual or likely separable parts. Do not visually explode one-piece ceramic/plastic/metal features such as molded feet, thrown foot rings, ribs, lips, or shoulders unless the category normally uses an added insert or the photo shows a seam.
@@ -119,6 +138,7 @@ Before generating or delivering an image, write a compact construction model:
 - Integral features: shapes formed as part of the same material/body.
 - Surface layers: paint, decal, glaze, label, coating, texture, printing.
 - Optional assumptions: only shown when useful, visually marked as conceptual, and kept consistent across all views.
+- User-provided fact model: any stated part, usage detail, safety function, or correction that must appear in the final analysis/image.
 - Working-principle model: energy/source, path, heat/fluid/air/motion route, and user-serviceable parts.
 - Visual identity model: distinctive exterior cues from the source photo that must remain visible after deconstruction.
 
@@ -129,8 +149,9 @@ Then verify:
 3. Three-view drawings do not imply seams or extra parts that the structure model rejects.
 4. Labels name integral features as features, not standalone components. Use `底足/圈足` for ceramic foot rings, not `独立底座`, unless an added base is visible.
 5. The exploded view does not duplicate a shell/body that already exists in the intact view unless the product truly has nested removable shells.
-6. The final image still resembles the user's photographed object in silhouette, material character, and distinctive visual cues.
-7. If an AI-generated image creates a contradiction or becomes a generic category object, either regenerate or explicitly reject that part of the image as inaccurate.
+6. User-provided factual parts and functions are included, labeled, and not contradicted by the drawing.
+7. The final image still resembles the user's photographed object in silhouette, material character, and distinctive visual cues.
+8. If an AI-generated image creates a contradiction, omits a user-provided fact, or becomes a generic category object, either regenerate or explicitly reject that part of the image as inaccurate.
 
 ## Chinese Handwritten Annotation Workflow
 

@@ -5,6 +5,7 @@ Use this reference to classify a product and make responsible design-structure i
 ## Inference Discipline
 
 - Start from visible facts before category assumptions.
+- Treat user-provided corrections or usage facts as specific evidence for the current object. Do not override them with generic category rules.
 - State uncertainty for hidden parts.
 - Prefer common structures in mass-market products unless the photo shows a premium, specialized, handmade, or experimental product.
 - Do not invent precise dimensions, materials, battery capacity, motor type, waterproof rating, safety certification, or manufacturing process unless visible or provided.
@@ -107,6 +108,7 @@ Old Beijing copper hot pot principles:
 - Structure: annular pot body, central chimney, raised base or fire chamber, vent openings, possible grate, possible ash tray, ring handles, rolled rim, lid only if visible or provided.
 - Material logic: copper or brass-colored metal body is usually sheet-formed, spun, hammered, rolled, soldered, brazed, riveted, or mechanically fastened. Rolled rims, vent holes, chimney walls, and many seams are manufacturing features, not user-removable parts.
 - Safety: heat isolation may come from an air gap, raised stand, handles, feet, insulation tray, or water-filled tray depending on the product. Do not assume a water tray unless visible, provided by the user, or common for the identified heat-source system.
+- User-provided water tray: if the user states the photographed hot pot includes an independent tray with a small amount of water for safety protection or heat isolation, include it as a separable tray layer and label its function. Keep it visually distinct from ash tray, fuel tray, and the main pot body.
 
 Common exploded layers for hot pots and warmers:
 
