@@ -1,0 +1,44 @@
+name: Usage report
+description: Tell us how you used this product design deconstruction skill.
+title: "[Usage] "
+labels:
+  - usage-report
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for using this skill.
+        Please do not share private customer data, unreleased product photos, confidential design files, or assets you do not have permission to publish.
+  - type: input
+    id: user_role
+    attributes:
+      label: Your role
+      description: e.g. designer, teacher, maker, product manager, researcher
+    validations:
+      required: false
+  - type: input
+    id: product_category
+    attributes:
+      label: Product category
+      description: e.g. kettle, chair, toy, packaging, appliance, tool
+    validations:
+      required: false
+  - type: dropdown
+    id: output_type
+    attributes:
+      label: Output type used
+      options:
+        - Design deconstruction text
+        - Annotated visual board
+        - Research summary
+        - Teaching/resource material
+        - Other
+    validations:
+      required: false
+  - type: textarea
+    id: feedback
+    attributes:
+      label: What worked or needs improvement?
+      description: Share only non-sensitive feedback.
+    validations:
+      required: false
